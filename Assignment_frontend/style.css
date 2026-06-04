@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background: #f1f5f9;
+
+  padding: 30px;
+
+  color: #1e293b;
+}
+
+#div1 {
+  background: rgb(240, 234, 234);
+
+  padding: 25px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 20px rgba(66, 27, 27, 0.08);
+
+  margin-bottom: 25px;
+}
+
+#div1 h2 {
+  text-transform: capitalize;
+
+  margin-bottom: 20px;
+
+  color: #1e293b;
+
+  font-size: 32px;
+}
+
+.searchbox,
+#searchMode {
+  font-weight: 600;
+
+  margin-right: 8px;
+
+  color: #58070e;
+}
+
+#search1 {
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  margin: px 8px 15px 0px;
+
+  transition: 0.3s;
+
+  background: white;
+}
+#search2,
+#search,
+#username,
+#mobile,
+#age,
+#role,
+#employeeId {
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  margin: 10px 8px 15px 13px;
+
+  transition: 0.3s;
+
+  background: white;
+}
+
+#search1:focus,
+#search2:focus,
+#search:focus,
+#username:focus,
+#mobile:focus,
+#age:focus,
+#role:focus,
+#employeeId:focus {
+  border-color: #79086a;
+
+  box-shadow: 0 0 0 4px rgba(22, 1, 56, 0.15);
+}
+
+#successfullCreateMsg{
+    position: fixed;
+    top: 20px;
+    right: -350px;
+    background: #22c55e;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-family: Arial;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    z-index: 1000;
+}
+#nullFieldMsg
+{
+  position: fixed;
+    top: 20px;
+    right: -350px;
+    background: #ff0000;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-family: Arial;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+button {
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+  margin-right: 8px;
+}
+
+#bt1 {
+  transition:1s ;
+  background: #a53918;
+
+  color: white;
+
+  margin-bottom: 20px;
+  float: right;
+}
+
+#bt1:hover {
+  background: #004104;
+
+  transform: translateY(-2px);
+}
+
+button[onclick="searchTable()"] {
+  background: #0f766e;
+
+  color: white;
+}
+
+button[onclick="searchTable()"]:hover {
+  background: #115e59;
+}
+
+button[onclick="resetTable()"] {
+  background: #e2e8f0;
+
+  color: #1e293b;
+}
+
+button[onclick="resetTable()"]:hover {
+  background: #cbd5e1;
+}
+
+#saveBtn {
+  background: #2563eb;
+
+  color: white;
+}
+
+#saveBtn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+button[onclick*="editData"] {
+  background: #2563eb;
+
+  color: white;
+}
+
+button[onclick*="editData"]:hover {
+  background: #1d4ed8;
+}
+
+button[onclick*="deleteData"] {
+  background: #dc2626;
+
+  color: white;
+}
+
+button[onclick*="deleteData"]:hover {
+  background: #b91c1c;
+}
+
+button[onclick="closeForm()"] {
+  background: #e2e8f0;
+
+  color: #1e293b;
+}
+
+button[onclick="closeForm()"]:hover {
+  background: #cbd5e1;
+}
+
+#personTable {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: white;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#personTable thead {
+  background: linear-gradient(to right, #9b850a, #3f1d01);
+
+  color: white;
+}
+
+#personTable th {
+  padding: 16px;
+
+  text-align: left;
+
+  font-size: 15px;
+}
+
+#personTable td {
+  padding: 15px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  font-size: 14px;
+}
+
+#personTable tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+#personTable tbody tr:hover {
+  background: #dbeafe;
+
+  transition: 0.3s;
+}
+
+/*POPUP*/
+
+.popupclass {
+  display: none;
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  justify-content: center;
+
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content-class {
+  background: white;
+
+  width: 400px;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  animation: popupAnimation 0.3s ease;
+}
+
+@keyframes popupAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content-class h3 {
+  text-align: center;
+
+  font-size: 28px;
+
+  margin-bottom: 10px;
+
+  color: #1e293b;
+}
+
+::placeholder {
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  #div1 {
+    padding: 20px;
+  }
+
+  #div1 h2 {
+    font-size: 26px;
+  }
+
+  .modal-content-class {
+    width: 90%;
+  }
+
+  #personTable {
+    font-size: 13px;
+  }
+
+  button {
+    width: 100%;
+
+    margin-top: 10px;
+  }
+
+  #search1,
+  #search2,
+  #search {
+    width: 100%;
+  }
+}

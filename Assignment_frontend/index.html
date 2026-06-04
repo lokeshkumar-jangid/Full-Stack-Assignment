@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="div1">
+      <h2>person directory</h2>
+      <button onclick="addEmployee()" id="bt1">+Add User</button>
+
+      <label class="searchbox" for="search1"><b>Name</b></label>
+      <input type="search" placeholder="Enter Name" id="search1" />
+
+      <br />
+      <label class="searchbox" for="search1"><b>Role</b></label>
+      <input type="search" placeholder="Enter Role" id="search2" />
+
+      <label id="searchMode" for="searchMode">Mode</label>
+      <select id="search">
+        <option value="exact">equals</option>
+        <option value="relational">contains</option>
+      </select>
+      <button type="button" onclick="searchTable()">Search</button>
+      <button type="button" onclick="resetTable()">Reset</button>
+      <br />
+    </div>
+
+    <table id="personTable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Mob. No.</th>
+          <th>Age</th>
+          <th>Role</th>
+          <th>Employee ID</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+    <div class="popupclass" id="popup">
+      <div class="modal-content-class">
+        <h3>Person Form</h3>
+
+        <input type="text" id="username" placeholder="Username" />
+
+        <input type="number" id="mobile" placeholder="Mobile Number" />
+
+        <input type="number" id="age" placeholder="Age" />
+
+        <input type="text" id="role" placeholder="Role" />
+
+        <input type="number" id="employeeId" placeholder="Employee ID" />
+
+        <button type="button" id="saveBtn" onclick="saveData()">create</button>
+
+        <button onclick="closeForm()">Closeform</button>
+      </div>
+    </div>
+    <div id="successfullCreateMsg">Profile created successfully</div>
+    <div id="nullFieldMsg">**All fields are mandatory*</div>
+
+    <script src="link.js"></script>
+  </body>
+</html>
